@@ -1,0 +1,19 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Raleway", sans-serif;
+  --second-family: "Manrope", sans-serif;
+  --third-family: "Roboto", sans-serif;
+  --font3: "Inter", sans-serif;
+  --content-width: 135rem;
+  --container-offset: 1rem;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --black: #000;
+  --link: #00e;
+  --burgundy: #671414;
+  --dark-red: #671414;
+  --burgundy: #671414;
+}

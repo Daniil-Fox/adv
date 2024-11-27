@@ -1,0 +1,51 @@
+.help {
+  padding: 1.2rem 0;
+
+  h4 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: var(--link);
+    }
+  }
+
+  &__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    flex-shrink: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

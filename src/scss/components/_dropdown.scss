@@ -1,0 +1,105 @@
+.dropdown {
+  &>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: .6rem;
+    overflow: hidden;
+
+    li {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 113%;
+      color: var(--black);
+
+      a {
+        color: inherit;
+      }
+    }
+
+    &>li {
+      span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f3f3f3;
+        padding: 1.5rem 3rem;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 1.2rem;
+          height: .6rem;
+
+          background-image: url('./../img/arrow-down.svg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+
+          transition: .3s ease-out;
+        }
+      }
+
+      &.active {
+        span::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      &>ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        box-sizing: content-box;
+        transition: max-height .3s ease-out;
+        will-change: max-height;
+
+        &>li {
+          background: #fefefe;
+          padding: 1.5rem 3rem;
+          border-bottom: 1px solid #ececec;
+
+          &.active {
+            &>a {
+              color: #6e1818;
+            }
+          }
+
+          &>ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            overflow: hidden;
+            max-height: 0;
+            box-sizing: content-box;
+            transition: max-height .3s ease-out;
+            will-change: max-height;
+
+            &>li {
+              padding: 1rem 0;
+              display: flex;
+              gap: 1rem;
+
+              &::before {
+                content: "";
+                display: block;
+                flex-shrink: 0;
+                width: 0.3rem;
+                height: 0.3rem;
+                border-radius: 100%;
+                background-color: #000;
+                margin-top: 0.5rem;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

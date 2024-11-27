@@ -1,0 +1,260 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(100vw / 144);
+
+  @media (max-width: 1024px) {
+    font-size: calc(100vw / 77);
+  }
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+.main {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4.5rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  &__content {
+    grid-column: 7 span;
+  }
+}
+
+.dropdown {
+  grid-column: 3 span;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}
+
+.is-hidden {
+  display: none !important;
+  /* stylelint-disable-line declaration-no-important */
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.centered {
+  text-align: center;
+}
+
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.page--ios .dis-scroll {
+  position: relative;
+}
+
+
+h1 {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 2.8rem;
+  color: var(--black);
+}
+
+h2 {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: var(--black);
+}
+
+h3 {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--black);
+}
+
+h4 {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.text1 {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+
+.text2 {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+
+.nav-main {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 114%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+
+  a {
+    color: inherit;
+  }
+}
+
+.nav-side {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 113%;
+  color: var(--black);
+}
+
+
+.search {
+  position: relative;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  input {
+    display: block;
+    box-shadow: inset 0 1px 1px 0 #7a3737;
+    background: #9e4848;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+
+    height: 3.4rem;
+
+    padding-right: 3rem;
+    padding-left: 1rem;
+    border-radius: .6rem;
+
+    &::placeholder {
+      color: #fff;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  button {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .7rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
