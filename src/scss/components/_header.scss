@@ -10,11 +10,21 @@
     background-size: 100% 16.2rem;
   }
 
+  @include mobile {
+    background-image: none;
+    background: var(--burgundy);
+  }
+
   &__top {
     padding-top: 0.8rem;
 
     @include tablet {
       padding-top: .5rem;
+    }
+
+    @include mobile {
+      padding: .6rem 0;
+      text-align: center;
     }
 
     .container {
@@ -30,6 +40,15 @@
     @include tablet {
       padding: 3.6rem 0 2.3rem;
     }
+
+    @include mobile {
+      background-image: url('./../img/header-mob.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+
+      padding: 1rem 0 1.4rem;
+    }
   }
 
   &__logo {
@@ -39,6 +58,12 @@
 
     @include tablet {
       height: 8.4rem;
+    }
+
+    @include mobile {
+      height: 5.3rem;
+      width: 20.7rem;
+      margin-bottom: .3rem;
     }
 
     img {
@@ -65,6 +90,10 @@
       padding: 2rem 1rem 1rem;
       gap: 3.2rem;
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__dev {
@@ -81,6 +110,12 @@
     @include tablet {
       margin-bottom: 0.2rem;
     }
+
+    @include mobile {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 240%;
+    }
   }
 
   &__container {
@@ -93,6 +128,10 @@
       flex-direction: column;
       gap: 2rem;
     }
+
+    @include mobile {
+      gap: 0;
+    }
   }
 
   &__line {
@@ -100,6 +139,10 @@
     border-left: none;
     height: 2.1rem;
     width: 100%;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__tel {
@@ -113,6 +156,10 @@
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @include tablet {
+        margin: 0;
+      }
     }
   }
 
@@ -123,7 +170,11 @@
       display: flex;
       align-items: center;
       gap: 3.2rem;
+    }
 
+    @include mobile {
+      flex-direction: column;
+      margin: 0;
     }
   }
 
@@ -136,6 +187,11 @@
       flex-direction: column;
       align-items: center;
     }
+
+    @include mobile {
+      flex-direction: row;
+      gap: 2rem;
+    }
   }
 
   &__soc {
@@ -146,6 +202,12 @@
     @include tablet {
       gap: 2.4rem;
     }
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
   }
 
   &__link {
@@ -154,6 +216,11 @@
     height: 3rem;
     border-radius: .5rem;
     overflow: hidden;
+
+    @include mobile {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
 
     img,
     svg {
@@ -171,6 +238,11 @@
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__right {
@@ -182,7 +254,10 @@
 
     @include tablet {
       justify-content: center;
+    }
 
+    @include mobile {
+      align-items: center;
     }
   }
 
@@ -200,6 +275,12 @@
       font-size: 1.2rem;
       margin-top: 0.5rem;
     }
+
+    @include mobile {
+      font-size: 1.2rem;
+      line-height: 117%;
+      text-align: center;
+    }
   }
 
   &__subtitle {
@@ -210,5 +291,125 @@
     line-height: 127%;
     letter-spacing: 0.1em;
     color: #fbf8d4;
+
+    @include mobile {
+      font-size: .8rem;
+      text-align: center;
+    }
+  }
+}
+
+
+.header-mob {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  position: relative;
+  z-index: 5;
+  background: var(--burgundy);
+  position: sticky;
+
+  top: 0;
+
+  @include mobile {
+    display: flex;
+
+  }
+
+  &__burger {
+    width: 2rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    .line {
+      height: .2rem;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2.5rem;
+
+      transition: .3s ease-out;
+    }
+
+    .cross {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./../img/cross.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transition: .3s ease-out;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: .25rem;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2.5rem;
+
+      transition: .3s ease-out;
+    }
+
+    &.active {
+
+      .line,
+      &::before,
+      &::after {
+        opacity: 0;
+      }
+
+      .cross {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__search {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transition: .3s ease-out;
+    }
+
+    .cross {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./../img/cross.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transition: .3s ease-out;
+    }
+
+    &.active {
+      svg {
+        opacity: 0;
+      }
+
+      .cross {
+        opacity: 1;
+      }
+    }
   }
 }

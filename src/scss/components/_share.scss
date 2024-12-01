@@ -6,6 +6,10 @@
     border: 1px solid #d1d1d1;
 
     text-align: center;
+
+    @include mobile {
+      padding-top: 0;
+    }
   }
 
   &__row {

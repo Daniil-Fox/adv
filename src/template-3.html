@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        @include('partials/nav.html')
+        <div class="main__container container">
+          @include('partials/dropdown.html')
+          <div class="main__content">
+            @include('partials/temp-3.html') @include('partials/share.html')
+          </div>
+          @include('partials/right-aside.html')
+        </div>
+
+        @include('partials/plug.html')
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

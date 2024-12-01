@@ -1,4 +1,8 @@
 .dropdown {
+  @include mobile {
+    margin-top: 1rem;
+  }
+
   &>ul {
     margin: 0;
     padding: 0;

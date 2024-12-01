@@ -10,6 +10,8 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+
 
 
 /***/ }),
@@ -64,6 +66,41 @@ if (dropdown) {
   });
 }
 
+/***/ }),
+
+/***/ "./src/js/components/modal.js":
+/*!************************************!*\
+  !*** ./src/js/components/modal.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+const modalButtons = document.querySelectorAll('.modal-btn');
+const modals = document.querySelectorAll('.modal');
+if (modals && modals.length > 0) {
+  modalButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const target = btn.dataset.modal.toLowerCase();
+      const currentModal = document.querySelector(`.modal[data-modal=${target}]`);
+      currentModal.classList.add('active');
+    });
+  });
+  modals.forEach(el => {
+    const body = el.querySelector('.modal__body');
+    const close = body.querySelector('.modal__close');
+    el.addEventListener('click', e => {
+      el.classList.remove('active');
+    });
+    body.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+    close.addEventListener('click', e => {
+      el.classList.remove('active');
+    });
+  });
+}
+
 /***/ })
 
 /******/ 	});
@@ -114,6 +151,23 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_components.js */ "./src/js/_components.js");
 
+const navMenu = document.querySelector('.nav-menu');
+const headerBurger = document.querySelector('.header-mob__burger');
+const searchBtn = document.querySelector('.header-mob__search');
+const searchPlug = document.querySelector('.search-plug');
+headerBurger.addEventListener('click', e => {
+  e.preventDefault();
+  navMenu.classList.toggle('active');
+  headerBurger.classList.toggle('active');
+  searchBtn.classList.remove('active');
+  searchPlug.classList.remove('active');
+});
+searchBtn.addEventListener('click', e => {
+  navMenu.classList.remove('active');
+  headerBurger.classList.remove('active');
+  searchBtn.classList.toggle('active');
+  searchPlug.classList.toggle('active');
+});
 })();
 
 /******/ })()

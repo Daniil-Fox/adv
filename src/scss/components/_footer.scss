@@ -63,6 +63,12 @@
       padding-top: 2rem;
       padding-bottom: 5rem;
     }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 3rem;
+      padding-bottom: 3rem;
+    }
   }
 
   &__bottom {
@@ -80,6 +86,11 @@
     flex-basis: 30rem;
     flex-shrink: 0;
 
+    @include mobile {
+      flex-basis: auto;
+      text-align: center;
+    }
+
     img {
       display: block;
       margin-top: 1rem;
@@ -87,6 +98,10 @@
       width: auto;
 
       object-fit: contain;
+
+      @include mobile {
+        margin: 1rem auto;
+      }
     }
   }
 
@@ -99,6 +114,10 @@
       flex-shrink: 1;
     }
 
+    @include mobile {
+      text-align: center;
+    }
+
     small {
       margin-bottom: 0.3rem;
     }
@@ -107,6 +126,11 @@
       display: flex;
       justify-content: flex-end;
       gap: 1rem;
+
+      @include mobile {
+        justify-content: center;
+        margin: 0.5rem 0;
+      }
 
       a {
         font-family: var(--third-family);

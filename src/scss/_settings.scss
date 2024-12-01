@@ -10,6 +10,10 @@ html {
   @media (max-width: 1024px) {
     font-size: calc(100vw / 77);
   }
+
+  @media (max-width: 576px) {
+    font-size: calc(100vw / 37.5);
+  }
 }
 
 .page {
@@ -41,6 +45,10 @@ html {
 
   &__content {
     grid-column: 7 span;
+
+    &--wide {
+      grid-column: 9 span;
+    }
   }
 }
 
@@ -59,7 +67,16 @@ a {
 }
 
 .site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  // overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}
+
+.sticky-menu {
+  position: sticky;
+  top: 1.5rem;
+
+  @include mobile {
+    position: static;
+  }
 }
 
 .is-hidden {
@@ -181,6 +198,10 @@ h4 {
   line-height: 160%;
   letter-spacing: 0.02em;
   color: var(--black);
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
 }
 
 .nav-main {
@@ -192,6 +213,10 @@ h4 {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
+
+  ul {
+    color: #fff;
+  }
 
   a {
     color: inherit;
@@ -256,5 +281,115 @@ h4 {
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+.temp {
+  a {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--link);
+  }
+}
+
+ul,
+ol {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  thead {
+    background: rgba(103, 20, 20, 0.1);
+  }
+
+  th,
+  td {
+    width: 33.333%;
+    padding: 1.4rem;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--black);
+    border: 1px solid #bcbcbc;
+    word-break: break-all;
+  }
+
+  th {
+    font-weight: 700;
+  }
+}
+
+.left table {
+
+  td,
+  th {
+    text-align: left !important;
+  }
+}
+
+.temp {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol {
+    margin: 1.8rem 0;
+  }
+}
+
+
+.nav-menu {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background: var(--burgundy);
+
+  transition: .3s ease-out;
+
+  transform: translateY(-150%);
+
+  &.active {
+    transform: translateY(0);
+  }
+}
+
+.search-plug {
+  padding: 2rem 1rem;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  left: 0;
+  top: 100%;
+  background: var(--burgundy);
+
+  transition: .3s ease-out;
+
+  transform: translateY(-150%);
+
+  &.active {
+    transform: translateY(0);
   }
 }
