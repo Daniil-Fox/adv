@@ -1,5 +1,5 @@
 import './_components.js';
-
+import { Fancybox } from "@fancyapps/ui";
 
 const navMenu = document.querySelector('.nav-menu')
 const headerBurger = document.querySelector('.header-mob__burger')
@@ -23,3 +23,7 @@ searchBtn.addEventListener('click', e => {
   searchBtn.classList.toggle('active')
   searchPlug.classList.toggle('active')
 })
+
+Fancybox.bind("[data-fancybox=gallery]", {
+  // Your custom options
+});
