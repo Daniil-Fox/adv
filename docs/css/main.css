@@ -434,6 +434,17 @@ p {
   color: var(--link);
 }
 
+a {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  color: var(--link);
+}
+@media (any-hover: hover) {
+  a:hover {
+    color: var(--burgundy);
+  }
+}
+
 ul,
 ol {
   font-family: var(--second-family);

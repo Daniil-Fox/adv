@@ -304,6 +304,15 @@ p {
   }
 }
 
+a {
+  transition: .3s ease-out;
+  color: var(--link);
+
+  @include hover {
+    color: var(--burgundy);
+  }
+}
+
 ul,
 ol {
   font-family: var(--second-family);
