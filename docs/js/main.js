@@ -27,6 +27,16 @@ const dropdown = document.querySelector('.dropdown');
 if (dropdown) {
   const list = dropdown.querySelector('.dropdown>ul');
   const listItems = list?.querySelectorAll('.dropdown>ul>li');
+  function clearOther(curr) {
+    listItems.forEach(el => {
+      const childListSecondLVL = el.querySelector('.dropdown>ul>li>ul');
+      childListSecondLVL.style.maxHeight = null;
+      if (el !== curr) el.classList.remove('active');
+    });
+    setTimeout(() => {
+      clearSecondLvl();
+    }, 300);
+  }
   function clearSecondLvl() {
     listItems.forEach(el => {
       const listinside = el.querySelectorAll('.dropdown>ul>li>ul>li>ul');
@@ -47,6 +57,7 @@ if (dropdown) {
       }, 300);
     }
     btn.addEventListener('click', e => {
+      clearOther(el);
       let isActive = el.classList.toggle('active');
       childListSecondLVL.style.maxHeight = isActive ? childListSecondLVL.scrollHeight + 'px' : null;
       const childrenItems = childListSecondLVL.querySelectorAll('.dropdown>ul>li>ul>li');
