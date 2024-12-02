@@ -17,6 +17,12 @@
       }
     }
 
+    a {
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+
     @include tablet {
       width: 100%;
       gap: 2rem;
