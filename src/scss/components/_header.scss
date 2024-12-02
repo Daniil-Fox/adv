@@ -138,7 +138,7 @@
     border: .3rem solid #99253b;
     border-left: none;
     height: 2.1rem;
-    width: 100%;
+    width: calc(100% + 2px);
 
     @include mobile {
       display: none;
