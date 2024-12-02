@@ -5,6 +5,16 @@ if(dropdown){
   const list = dropdown.querySelector('.dropdown>ul')
   const listItems = list?.querySelectorAll('.dropdown>ul>li')
 
+  function clearSecondLvl(){
+    listItems.forEach(el => {
+      const listinside = el.querySelectorAll('.dropdown>ul>li>ul>li>ul')
+      listinside.forEach(item => {
+        item.closest('li').classList.remove('active')
+        item.style.maxHeight = null
+      })
+    })
+  }
+
   listItems.forEach(el => {
     const btn = el.querySelector('span')
     const childListSecondLVL = el.querySelector('.dropdown>ul>li>ul')
@@ -29,6 +39,7 @@ if(dropdown){
           const link = el.querySelector('.dropdown>ul>li>ul>li>a')
           link.addEventListener('click', e => {
             e.preventDefault()
+            clearSecondLvl()
             const newList = el.querySelector('ul')
             if(newList){
               link.addEventListener('click', e => {
