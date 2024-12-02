@@ -589,7 +589,7 @@ table th {
 }
 @media (max-width: 1024px) {
   .header__logo {
-    height: 8.4rem;
+    height: 8.2rem;
   }
 }
 @media (max-width: 576px) {
