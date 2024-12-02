@@ -228,6 +228,14 @@ searchBtn.addEventListener('click', e => {
 _fancyapps_ui__WEBPACK_IMPORTED_MODULE_1__.Fancybox.bind("[data-fancybox=gallery]", {
   // Your custom options
 });
+const toTop = document.querySelector('.to-top');
+if (toTop) {
+  toTop.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.scrollTo(0, 0);
+  });
+}
 })();
 
 /******/ })()

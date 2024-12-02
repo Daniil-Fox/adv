@@ -27,3 +27,12 @@ searchBtn.addEventListener('click', e => {
 Fancybox.bind("[data-fancybox=gallery]", {
   // Your custom options
 });
+
+const toTop = document.querySelector('.to-top')
+if(toTop){
+  toTop.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.scrollTo(0,0)
+  })
+}
