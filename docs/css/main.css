@@ -314,6 +314,16 @@ h4 {
   color: var(--black);
 }
 
+p {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+
 .text2 {
   margin: 0;
   font-family: var(--second-family);
