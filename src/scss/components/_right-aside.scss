@@ -33,6 +33,7 @@
 
   &__text {
     margin: 0;
+    margin: 1.2rem 0;
     font-family: var(--second-family);
     font-weight: 400;
     font-size: 1.2rem;
@@ -70,10 +71,14 @@
   }
 
   &__link {
+    margin: 1.5rem 0;
+    width: 100%;
+    text-align: center;
     border: 1px solid var(--burgundy);
     border-radius: 3px;
     background-color: #fff;
     display: inline-flex;
+    justify-content: center;
     padding: 0.6rem 1rem;
     text-align: center;
     font-family: var(--second-family);
@@ -82,6 +87,11 @@
     line-height: 133%;
     text-align: center;
     color: var(--burgundy);
+    transition: .3s ease-out;
+
+    @include hover {
+      background-color: rgba(#671414, 0.3);
+    }
 
     @include tablet {
       display: block;
@@ -175,6 +185,7 @@
   }
 
   &__text {
+
     display: block;
     margin: 0 1.2rem;
     font-family: var(--second-family);

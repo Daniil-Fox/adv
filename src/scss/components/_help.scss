@@ -35,6 +35,11 @@
       text-decoration: underline;
       text-decoration-skip-ink: none;
       color: var(--link);
+      transition: .3s ease-out;
+
+      @include hover {
+        color: var(--burgundy);
+      }
     }
   }
 
@@ -48,4 +53,5 @@
       height: 100%;
     }
   }
+
 }
