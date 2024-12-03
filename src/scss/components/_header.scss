@@ -4,6 +4,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  position: relative;
+  z-index: 20;
 
   @include tablet {
     background-image: url('./../img/header-tab.webp');

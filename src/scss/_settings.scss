@@ -73,6 +73,7 @@ a {
 .sticky-menu {
   position: sticky;
   top: 1.5rem;
+  z-index: 10;
 
   @include mobile {
     position: static;

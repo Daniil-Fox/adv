@@ -199,6 +199,7 @@ a {
 .sticky-menu {
   position: sticky;
   top: 1.5rem;
+  z-index: 10;
 }
 @media (max-width: 576px) {
   .sticky-menu {
@@ -544,6 +545,8 @@ table th {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  position: relative;
+  z-index: 20;
 }
 @media (max-width: 1024px) {
   .header {
