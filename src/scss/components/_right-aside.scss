@@ -67,6 +67,12 @@
       width: 10.9rem;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
+      transition: .3s ease-out;
+
+      @include hover {
+        transform: translateY(-4px);
+      }
     }
   }
 
@@ -159,6 +165,7 @@
       width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
   }
 }
