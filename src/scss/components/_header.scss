@@ -6,6 +6,7 @@
   background-position: top;
   position: relative;
   z-index: 20;
+  overflow: hidden;
 
   @include tablet {
     background-image: url('./../img/header-tab.webp');
@@ -57,6 +58,7 @@
     display: block;
     width: 31.1rem;
     height: 8rem;
+    position: relative;
 
     @include tablet {
       height: 8.2rem;
@@ -73,6 +75,30 @@
       height: 100%;
       object-fit: contain;
       object-position: right bottom;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: calc(100% - 0.1rem);
+      width: 77rem;
+      top: 3.84rem;
+      border-left: none;
+      height: 2.1rem;
+      // width: calc(100% + 2px);
+      background-image: url('./../img/line.svg'), url('./../img/right-board.webp');
+      background-size: cover, auto 90%;
+      background-position: right, right;
+      background-repeat: no-repeat;
+
+      @include tablet {
+        width: 46rem;
+        top: 4.35rem;
+      }
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 
@@ -100,7 +126,7 @@
 
   &__dev {
     margin: 0;
-
+    margin-bottom: 4rem;
     font-weight: 700;
     font-size: 1.8rem;
     line-height: 120%;
@@ -110,7 +136,7 @@
     color: #656161;
 
     @include tablet {
-      margin-bottom: 0.2rem;
+      // margin-bottom: 0.2rem;
     }
 
     @include mobile {
@@ -138,13 +164,7 @@
 
   &__line {
     // border: .35rem solid #99253b;
-    border-left: none;
-    height: 2.2rem;
-    width: calc(100% + 2px);
-    background-image: url('./../img/line.svg'), url('./../img/right-board.webp');
-    background-size: 100% 100%, auto 90%;
-    background-position: right, right;
-    background-repeat: no-repeat;
+
 
 
     @include mobile {
@@ -313,10 +333,9 @@
   align-items: center;
   flex-direction: row;
   padding: 1rem;
-  position: relative;
-  z-index: 5;
   background: var(--burgundy);
   position: sticky;
+  z-index: 30;
 
   top: 0;
 

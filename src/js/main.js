@@ -36,3 +36,17 @@ if(toTop){
     window.scrollTo(0,0)
   })
 }
+
+
+// Fixed header nav
+const stickyMenu = document.querySelector('.sticky-menu')
+const siteCont = document.querySelector('.site-container')
+const offset = stickyMenu.offsetTop
+window.addEventListener('scroll', e => {
+  console.log(offset)
+  if(window.scrollY >= offset){
+    stickyMenu.classList.add('sticky')
+  } else {
+    stickyMenu.classList.remove('sticky')
+  }
+})

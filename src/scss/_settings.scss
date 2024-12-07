@@ -75,6 +75,16 @@ a {
   top: 1.5rem;
   z-index: 10;
 
+  &.sticky {
+    .header__nav {
+      justify-content: center;
+    }
+
+    .nav {
+      width: auto;
+    }
+  }
+
   @include mobile {
     position: static;
   }
