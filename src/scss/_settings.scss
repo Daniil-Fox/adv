@@ -303,6 +303,41 @@ p {
     text-decoration-skip-ink: none;
     color: var(--link);
   }
+
+  article {
+    background: #eee;
+    padding: 1.5rem;
+
+    p {
+      margin: 0;
+
+      &+p {
+        margin-bottom: 1rem;
+      }
+    }
+
+    a {
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 160%;
+      letter-spacing: 0.02em;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: var(--burgundy);
+    }
+
+    img {
+      flex-shrink: 0;
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 1rem;
+    }
+
+    display: flex;
+    gap: 1.5rem;
+  }
 }
 
 p a {
