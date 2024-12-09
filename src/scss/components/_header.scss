@@ -68,6 +68,7 @@
     }
 
     @include mobile {
+      position: static;
       height: 5.3rem;
       width: 20.7rem;
       margin-bottom: .3rem;
@@ -147,6 +148,7 @@
       text-align: center;
       font-size: 1rem;
       line-height: 240%;
+      margin-bottom: .01rem;
     }
   }
 
@@ -320,6 +322,7 @@
       font-size: 1.2rem;
       line-height: 117%;
       text-align: center;
+      margin: 0;
     }
   }
 

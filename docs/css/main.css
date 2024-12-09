@@ -653,6 +653,7 @@ table th {
 }
 @media (max-width: 576px) {
   .header__logo {
+    position: static;
     height: 5.3rem;
     width: 20.7rem;
     margin-bottom: 0.3rem;
@@ -713,6 +714,7 @@ table th {
     text-align: center;
     font-size: 1rem;
     line-height: 240%;
+    margin-bottom: 0.01rem;
   }
 }
 .header__container {
@@ -945,6 +947,7 @@ table th {
     font-size: 1.2rem;
     line-height: 117%;
     text-align: center;
+    margin: 0;
   }
 }
 .header__subtitle {
