@@ -640,9 +640,11 @@ table th {
 }
 .header__logo {
   display: block;
-  width: 31.1rem;
   height: 8rem;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 @media (max-width: 1024px) {
   .header__logo {
@@ -657,36 +659,12 @@ table th {
   }
 }
 .header__logo img {
-  width: 100%;
+  width: auto;
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
   -o-object-position: right bottom;
   object-position: right bottom;
-}
-.header__logo::after {
-  content: "";
-  position: absolute;
-  left: calc(100% - 0.1rem);
-  width: 77rem;
-  top: 3.84rem;
-  border-left: none;
-  height: 2.1rem;
-  background-image: url("./../img/line.svg"), url("./../img/right-board.webp");
-  background-size: cover, auto 90%;
-  background-position: right, right;
-  background-repeat: no-repeat;
-}
-@media (max-width: 1024px) {
-  .header__logo::after {
-    width: 46rem;
-    top: 4.35rem;
-  }
-}
-@media (max-width: 576px) {
-  .header__logo::after {
-    display: none;
-  }
 }
 .header__nav {
   margin: 3rem 0;
@@ -859,6 +837,15 @@ table th {
     -ms-flex-pack: center;
     justify-content: center;
     gap: 2rem;
+  }
+}
+.header__left {
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .header__left {
+    width: 100%;
   }
 }
 .header__link {

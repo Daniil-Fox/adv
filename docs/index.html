@@ -99,7 +99,17 @@
       <div class="header__container">
         <div class="header__left">
           <a href="./" class="header__logo">
-            <img src="./img/logo.svg" alt="" />
+            <picture>
+              <source
+                srcset="./img/logo-long.webp"
+                media="(min-width: 1025px)"
+              />
+              <source
+                srcset="./img/logo-long-mob.webp"
+                media="(min-width: 578px)"
+              />
+              <img src="./img/logo.svg" />
+            </picture>
           </a>
 
           <div class="header__right">

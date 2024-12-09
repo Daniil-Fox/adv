@@ -56,9 +56,12 @@
 
   &__logo {
     display: block;
-    width: 31.1rem;
+    // width: 112rem;
     height: 8rem;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 
     @include tablet {
       height: 8.2rem;
@@ -71,35 +74,36 @@
     }
 
     img {
-      width: 100%;
+
+      width: auto;
       height: 100%;
       object-fit: contain;
       object-position: right bottom;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: calc(100% - 0.1rem);
-      width: 77rem;
-      top: 3.84rem;
-      border-left: none;
-      height: 2.1rem;
-      // width: calc(100% + 2px);
-      background-image: url('./../img/line.svg'), url('./../img/right-board.webp');
-      background-size: cover, auto 90%;
-      background-position: right, right;
-      background-repeat: no-repeat;
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   left: calc(100% - 0.1rem);
+    //   width: 77rem;
+    //   top: 3.84rem;
+    //   border-left: none;
+    //   height: 2.1rem;
+    //   // width: calc(100% + 2px);
+    //   background-image: url('./../img/line.svg'), url('./../img/right-board.webp');
+    //   background-size: cover, auto 90%;
+    //   background-position: right, right;
+    //   background-repeat: no-repeat;
 
-      @include tablet {
-        width: 46rem;
-        top: 4.35rem;
-      }
+    //   @include tablet {
+    //     width: 46rem;
+    //     top: 4.35rem;
+    //   }
 
-      @include mobile {
-        display: none;
-      }
-    }
+    //   @include mobile {
+    //     display: none;
+    //   }
+    // }
   }
 
   &__nav {
@@ -234,6 +238,15 @@
       flex-direction: column;
       justify-content: center;
       gap: 2rem;
+    }
+  }
+
+  &__left {
+    overflow: hidden;
+    position: relative;
+
+    @include tablet {
+      width: 100%;
     }
   }
 
