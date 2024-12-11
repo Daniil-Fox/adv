@@ -17,6 +17,12 @@
       line-height: 113%;
       color: var(--black);
 
+      &.active {
+        span {
+          color: #6e1818;
+        }
+      }
+
       a {
         color: inherit;
       }

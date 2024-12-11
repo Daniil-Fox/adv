@@ -1499,6 +1499,9 @@ table th {
   line-height: 113%;
   color: var(--black);
 }
+.dropdown > ul li.active span {
+  color: #6e1818;
+}
 .dropdown > ul li a {
   color: inherit;
 }
