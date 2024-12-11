@@ -1583,6 +1583,10 @@ table th {
   background-color: #000;
   margin-top: 0.5rem;
 }
+.dropdown > ul > li > ul > li > ul > li.active,
+.dropdown > ul > li > ul > li > ul > li a.active {
+  color: #6e1818;
+}
 
 .right-aside {
   -ms-grid-column-span: 2;

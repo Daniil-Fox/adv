@@ -100,6 +100,11 @@
                 margin-top: 0.5rem;
 
               }
+
+              &.active,
+              a.active {
+                color: #6e1818;
+              }
             }
           }
         }
